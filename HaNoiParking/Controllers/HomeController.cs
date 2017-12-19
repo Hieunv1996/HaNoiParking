@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model.Dao;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +9,15 @@ namespace HaNoiParking.Controllers
 {
     public class HomeController : Controller
     {
+        ParkingDao dao = new ParkingDao();
         public ActionResult Index()
         {
             return View();
+        }
+
+        public JsonResult List()
+        {
+            return Json(dao.GetListParking(), JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult About()

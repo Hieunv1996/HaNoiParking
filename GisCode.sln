@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HaNoiParking", "HaNoiParking\HaNoiParking.csproj", "{DD5F903F-70AD-4DBC-90B7-B9401BBB0DEF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{BB2A97B0-0EAA-49E2-9C68-F246E02D4ECE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{DD5F903F-70AD-4DBC-90B7-B9401BBB0DEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD5F903F-70AD-4DBC-90B7-B9401BBB0DEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD5F903F-70AD-4DBC-90B7-B9401BBB0DEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB2A97B0-0EAA-49E2-9C68-F246E02D4ECE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB2A97B0-0EAA-49E2-9C68-F246E02D4ECE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB2A97B0-0EAA-49E2-9C68-F246E02D4ECE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB2A97B0-0EAA-49E2-9C68-F246E02D4ECE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
