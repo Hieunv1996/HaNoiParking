@@ -11,16 +11,20 @@ namespace Model.EF
     {
         public int ParkingID { get; set; }
 
+        [Required]
         public string Name { get; set; }
 
+        [Required]
         public string Address { get; set; }
 
         [StringLength(50)]
+        [Phone]
         public string Phone { get; set; }
 
         public bool? IsOverNight { get; set; }
 
         [StringLength(500)]
+        [Url]
         public string Website { get; set; }
 
         [StringLength(500)]
@@ -29,8 +33,8 @@ namespace Model.EF
         [StringLength(500)]
         public string Price { get; set; }
 
-        public float? Lat { get; set; }
+        public float Lat { get; set; }
 
-        public float? Lng { get; set; }
+        public float Lng { get; set; }
     }
 }

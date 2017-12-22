@@ -11,15 +11,19 @@ namespace Model.EF
     {
         public int UserID { get; set; }
 
+        [Required]
         [StringLength(500)]
         public string Nickname { get; set; }
 
         [StringLength(500)]
         public string Avatar { get; set; }
 
+        [Required]
         [StringLength(500)]
+        [EmailAddress]
         public string Email { get; set; }
 
+        [Required]
         [StringLength(500)]
         public string Password { get; set; }
     }

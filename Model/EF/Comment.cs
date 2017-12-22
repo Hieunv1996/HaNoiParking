@@ -11,11 +11,11 @@ namespace Model.EF
     {
         public int CommentID { get; set; }
 
-        public int? ParkingID { get; set; }
+        public int ParkingID { get; set; }
 
-        public int? UserID { get; set; }
+        public int UserID { get; set; }
 
-        public int? Rating { get; set; }
+        public int Rating { get; set; }
 
         [StringLength(500)]
         public string Title { get; set; }

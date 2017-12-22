@@ -12,6 +12,7 @@ namespace Model.EF
         {
         }
 
+        public virtual DbSet<Admin> Admins { get; set; }
         public virtual DbSet<Comment> Comments { get; set; }
         public virtual DbSet<Parking> Parkings { get; set; }
         public virtual DbSet<ParkingImage> ParkingImages { get; set; }
@@ -19,6 +20,14 @@ namespace Model.EF
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Admin>()
+                .Property(e => e.Username)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Admin>()
+                .Property(e => e.Password)
+                .IsUnicode(false);
+
             modelBuilder.Entity<Parking>()
                 .Property(e => e.Phone)
                 .IsUnicode(false);

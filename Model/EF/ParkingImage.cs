@@ -12,8 +12,9 @@ namespace Model.EF
         [Key]
         public int ImageID { get; set; }
 
-        public int? ParkingID { get; set; }
+        public int ParkingID { get; set; }
 
+        [Required]
         public string ImagePath { get; set; }
     }
 }
