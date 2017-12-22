@@ -1,0 +1,96 @@
+﻿@model IEnumerable<Model.EF.Parking>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section title{
+    Quản lí danh sách bãi đỗ xe
+}
+
+<p>
+    <a href="@Url.Action("Create", "Parking")" class="btn btn-success">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        <span><strong>Thêm mới bãi đỗ</strong></span>
+    </a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsOverNight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Website)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OpenTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lng)
+        </th>
+        <th>Action</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsOverNight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Website)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OpenTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lng)
+        </td>
+        <td>
+            <a href="@Url.Action("Edit", "Parking",new { id=item.ParkingID })" class="btn btn-primary btn-sm" style="width: 80px;">
+                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                <span><strong>Sửa</strong></span> 
+            </a>
+            <a href="@Url.Action("Details", "Parking",new { id=item.ParkingID })" class="btn btn-success btn-sm" style="width: 80px;">
+                <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                <span><strong>Xem</strong></span>
+            </a>
+            <a href="@Url.Action("Delete", "Parking",new { id=item.ParkingID })" class="btn btn-warning btn-sm" style="width: 80px;">
+                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                <span><strong>Xóa</strong></span>
+            </a>
+        </td>
+    </tr>
+}
+
+</table>

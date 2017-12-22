@@ -1,0 +1,78 @@
+﻿@model IEnumerable<Model.EF.Comment>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section title{
+   Danh sách bình luận
+}
+
+<p>
+    <a href="@Url.Action("Create", "Comment")" class="btn btn-success">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        <span><strong>Thêm mới bình luận</strong></span>
+    </a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ParkingID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rating)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Content)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Time)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ParkingID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rating)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Content)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Time)
+        </td>
+        <td>
+            <a href="@Url.Action("Edit", "Comment",new { id=item.CommentID })" class="btn btn-primary btn-sm" style="width: 80px;">
+                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                <span><strong>Sửa</strong></span>
+            </a>
+            <a href="@Url.Action("Details", "Comment",new { id=item.CommentID })" class="btn btn-success btn-sm" style="width: 80px;">
+                <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                <span><strong>Xem</strong></span>
+            </a>
+            <a href="@Url.Action("Delete", "Comment",new { id=item.CommentID })" class="btn btn-warning btn-sm" style="width: 80px;">
+                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                <span><strong>Xóa</strong></span>
+            </a>
+        </td>
+    </tr>
+}
+
+</table>

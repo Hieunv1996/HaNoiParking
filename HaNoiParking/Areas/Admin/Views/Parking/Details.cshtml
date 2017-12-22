@@ -1,0 +1,91 @@
+﻿@model Model.EF.Parking
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section title{
+    Xem thông tin bãi đỗ
+}
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsOverNight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsOverNight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Website)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Website)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OpenTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OpenTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lng)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lng)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ParkingID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -49,10 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dao\AdminDao.cs" />
     <Compile Include="Dao\CommentDao.cs" />
     <Compile Include="Dao\ParkingDao.cs" />
     <Compile Include="Dao\ParkingImageDao.cs" />
     <Compile Include="Dao\UserDao.cs" />
+    <Compile Include="EF\Admin.cs" />
     <Compile Include="EF\Comment.cs" />
     <Compile Include="EF\HaNoiParkingDbContext.cs" />
     <Compile Include="EF\Parking.cs" />
