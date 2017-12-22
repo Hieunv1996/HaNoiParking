@@ -28,6 +28,17 @@ namespace Model.Dao
             }
         }
 
+        public List<User> GetListUser(String query)
+        {
+            IEnumerable<User> accounts = obj.Users;
+            if (!string.IsNullOrEmpty(query))
+            {
+                accounts = accounts.Where(x => (x.Nickname).ToLower().Contains(query.ToLower()) || x.Email.ToLower().Contains(query.ToLower()));
+            }
+            List<User> lst = accounts.OrderBy(x => x.UserID).ToList();
+            return lst;
+        }
+
         public bool Update(User account)
         {
             try
