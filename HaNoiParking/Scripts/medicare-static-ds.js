@@ -4,7 +4,6 @@
  */
 function MedicareDataSource() {
     $.extend(this, new storeLocator.StaticDataFeed);
-
     var stores = [];
     var that = this;
     $.ajax({

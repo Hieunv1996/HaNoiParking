@@ -12,7 +12,7 @@ var SHADOW = new google.maps.MarkerImage('../../Images/parking.png', null, null,
 google.maps.event.addDomListener(window, 'load', function () {
   var map = new google.maps.Map(document.getElementById('map-canvas'), {
     center: new google.maps.LatLng(21.027425, 105.833426), // => Ha Noi
-    zoom: 15,
+    zoom: 10,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   });
 
@@ -42,12 +42,11 @@ google.maps.event.addDomListener(window, 'load', function () {
     }
 
     var details = store.getDetails();
-
     var html = ['<div class="store"><div class="title">', details.title,
       '</div><div class="address">', details.address, '</div>',
        '</div><div class="phone">', details.phone, '</div>',
       '<div class="website">', details.website, '</div></div>'].join('');
-
+    
     infoBubble.setContent($(html)[0]);
     return infoBubble;
   };
