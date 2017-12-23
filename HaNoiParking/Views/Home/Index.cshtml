@@ -1,43 +1,59 @@
-﻿@{
-    ViewBag.Title = "Home Page";
-}
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Store locator with customisations</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCslWe4MsfrqI6J4LagbmuXE5H8gJG0d-4&libraries=places"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js">
+    </script>
+    <script src="~/Scripts/store-locator.min.js"></script>
+    <script src="~/Scripts/infobubble-compiled.js"></script>
+    <script src="~/Scripts/medicare-static-ds.js"></script>
+    <script src="~/Scripts/custom.js"></script>
+    <link href="~/Content/storelocator.css" rel="stylesheet" />
+    <style>
+        body {
+            font-family: sans-serif;
+        }
 
+        #map-canvas, #panel {
+            height: 500px;
+        }
 
-<style>
-    #map_canvas img {
-        max-width: none;
-    }
-</style>
+        #panel {
+            width: 300px;
+            float: left;
+            margin-right: 10px;
+        }
 
-<!-- This css is to give a nice big popup "info window" when a marker is clicked on the map -->
-<style>
-    .infoDiv {
-        height: 100px;
-        width: 100px;
-        -webkit-user-select: none;
-        background-color: white;
-    }
-</style>
+            #panel .feature-filter label {
+                width: 130px;
+            }
 
-<!-- This is the div that will contain the Google Map -->
-<div id="map_canvas" style="height: 550px;"></div>
-<!-- Enclose the Javascript in a "section" so that it is rendered in the correct order after scripts have been loaded etc -->
-@section scripts {
-    <section class="scripts">
+        p.attribution, p.attribution a {
+            color: #666;
+        }
 
-        <script type="text/javascript">
+        .store .hours {
+            color: grey;
+        }
+    </style>
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-12846745-20']);
+      _gaq.push(['_trackPageview']);
 
-            
-
-
-    //$(document).ready(function () {
-    // loadData();
-    //});
-            
-        </script>
-        <script async defer
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCslWe4MsfrqI6J4LagbmuXE5H8gJG0d-4&callback=loadData">
-        </script>
-        <script src="~/Scripts/loadmap.js"></script>
-    </section>
-}
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+</head>
+<body>
+    <h1>Medicare offices</h1>
+    <div id="panel"></div>
+    <div id="map-canvas"></div>
+    <p class="attribution">Medicare location data from <a href="http://data.gov.au/66">data.gov.au</a>, licensed under <a href="http://creativecommons.org/licenses/by/2.5/au/">CC-BY 2.5</a></p>
+</body>
+</html>
