@@ -11,7 +11,7 @@ using Model.EF;
 
 namespace HaNoiParking.Areas.Admin.Controllers
 {
-    public class UserController : Controller
+    public class UserController : BaseController
     {
         private HaNoiParkingDbContext db = new HaNoiParkingDbContext();
 

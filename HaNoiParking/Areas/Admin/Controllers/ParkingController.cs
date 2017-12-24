@@ -8,6 +8,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Model.EF;
+using PagedList;
+using Model.Dao;
 
 namespace HaNoiParking.Areas.Admin.Controllers
 {
@@ -16,9 +18,11 @@ namespace HaNoiParking.Areas.Admin.Controllers
         private HaNoiParkingDbContext db = new HaNoiParkingDbContext();
 
         // GET: Admin/Parking
-        public async Task<ActionResult> Index()
+        public async Task<ActionResult> Index(int page = 1, int pageSize = 10)
         {
-            return View(await db.Parkings.ToListAsync());
+            var dao = new ParkingDao();
+            var lstParking = dao.GetListParking();
+            return View(lstParking.ToPagedList(page, pageSize));
         }
 
         // GET: Admin/Parking/Details/5

@@ -167,3 +167,7 @@ C:\Users\vanhi\Desktop\HaNoiParking\HaNoiParking\bin\Microsoft.Owin.Security.Mic
 C:\Users\vanhi\Desktop\HaNoiParking\HaNoiParking\obj\Debug\HaNoiParking.csprojResolveAssemblyReference.cache
 C:\Users\vanhi\Desktop\HaNoiParking\HaNoiParking\obj\Debug\HaNoiParking.dll
 C:\Users\vanhi\Desktop\HaNoiParking\HaNoiParking\obj\Debug\HaNoiParking.pdb
+C:\Users\vanhi\Desktop\HaNoiParking\HaNoiParking\bin\PagedList.dll
+C:\Users\vanhi\Desktop\HaNoiParking\HaNoiParking\bin\PagedList.Mvc.dll
+C:\Users\vanhi\Desktop\HaNoiParking\HaNoiParking\bin\PagedList.xml
+C:\Users\vanhi\Desktop\HaNoiParking\HaNoiParking\bin\PagedList.Mvc.xml

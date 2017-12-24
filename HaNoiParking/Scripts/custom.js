@@ -85,12 +85,14 @@ function getCurrentLocation() {
                 infoWindow.open(map, marker);
             });
             map.setCenter(current);
-            map.setZoom(12);
+            map.setZoom(15);
         }, function () {
             handleLocationError(true, infoWindow, map.getCenter());
+            alert('Can\'t get your location');
         });
     } else {
         // Browser doesn't support Geolocation
         handleLocationError(false, infoWindow, map.getCenter());
+        alert('Browser doesn\'t support Geolocation');
     }
 }

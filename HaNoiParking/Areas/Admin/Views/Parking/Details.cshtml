@@ -6,84 +6,50 @@
 }
 
 @section title{
-    Xem thông tin bãi đỗ
+    XEM THÔNG TIN BÃI ĐỖ
 }
 
 <div>
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Address)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Address)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Phone)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Phone)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IsOverNight)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IsOverNight)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Website)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Website)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.OpenTime)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.OpenTime)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Lat)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Lat)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Lng)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Lng)
-        </dd>
-
-    </dl>
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <td style="width:100px; font-weight:bold">@Html.DisplayNameFor(model => model.Name)</td>
+                <td>@Html.DisplayFor(model => model.Name)</td>
+            </tr>
+            <tr>
+                <td style="width:100px; font-weight:bold">@Html.DisplayNameFor(model => model.Address)</td>
+                <td>@Html.DisplayFor(model => model.Address)</td>
+            </tr>
+            <tr>
+                <td style="width:100px; font-weight:bold">@Html.DisplayNameFor(model => model.Phone)</td>
+                <td>@Html.DisplayFor(model => model.Phone)</td>
+            </tr>
+            <tr>
+                <td style="width:100px; font-weight:bold">@Html.DisplayNameFor(model => model.IsOverNight)</td>
+                <td>@Html.DisplayFor(model => model.IsOverNight)</td>
+            </tr>
+            <tr>
+                <td style="width:100px; font-weight:bold">@Html.DisplayNameFor(model => model.Website)</td>
+                <td>@Html.DisplayFor(model => model.Website)</td>
+            </tr>
+            <tr>
+                <td style="width:100px; font-weight:bold">@Html.DisplayNameFor(model => model.OpenTime)</td>
+                <td>@Html.DisplayFor(model => model.OpenTime)</td>
+            </tr>
+            <tr>
+                <td style="width:100px; font-weight:bold">@Html.DisplayNameFor(model => model.Price)</td>
+                <td>@Html.DisplayFor(model => model.Price)</td>
+            </tr>
+            <tr>
+                <td style="width:100px; font-weight:bold">@Html.DisplayNameFor(model => model.Lat)</td>
+                <td>@Html.DisplayFor(model => model.Lat)</td>
+            </tr>
+            <tr>
+                <td style="width:100px; font-weight:bold">@Html.DisplayNameFor(model => model.Lng)</td>
+                <td>@Html.DisplayFor(model => model.Lng)</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.ParkingID }) |

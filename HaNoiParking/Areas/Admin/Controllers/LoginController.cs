@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace HaNoiParking.Areas.Admin.Controllers
 {
@@ -27,7 +28,12 @@ namespace HaNoiParking.Areas.Admin.Controllers
             }
             return View("Index");
         }
-
+        public ActionResult Logout()
+        {
+            Session.Remove("AdminUsername");
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index", "Login");
+        }
         //public ActionResult LoginValid(Model.EF.Admin account)
         //{
         //    if (ModelState.IsValid)

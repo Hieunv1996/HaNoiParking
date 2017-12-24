@@ -1,4 +1,9 @@
-﻿@model IEnumerable<Model.EF.Parking>
+﻿
+@using Model;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<Model.EF.Parking>
+@*@model IEnumerable<Model.EF.Parking>*@
+
 
 @{
     ViewBag.Title = "Index";
@@ -6,91 +11,104 @@
 }
 
 @section title{
-    Quản lí danh sách bãi đỗ xe
+    QUẢN LÝ DANH SÁCH BÃI ĐỖ XE
 }
 
 <p>
     <a href="@Url.Action("Create", "Parking")" class="btn btn-success">
         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
         <span><strong>Thêm mới bãi đỗ</strong></span>
+
     </a>
 </p>
-<table class="table">
+<table id="datatable" class="table table-striped table-bordered cabn_datatable">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            @*@Html.DisplayNameFor(model => model.Name)*@
+            Name
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Address)
+            @*@Html.DisplayNameFor(model => model.Address)*@
+            Address
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Phone)
+            @*@Html.DisplayNameFor(model => model.Phone)*@
+            Phone
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.IsOverNight)
+            @*@Html.DisplayNameFor(model => model.IsOverNight)*@
+            IsOverNight
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Website)
+            @*@Html.DisplayNameFor(model => model.Website)*@
+            Website
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.OpenTime)
+            @*@Html.DisplayNameFor(model => model.OpenTime)*@
+            OpenTime
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Price)
+            @*@Html.DisplayNameFor(model => model.Price)*@
+            Price
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Lat)
+            @*@Html.DisplayNameFor(model => model.Lat)*@
+            Lat
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Lng)
+            @*@Html.DisplayNameFor(model => model.Lng)*@
+            Lng
         </th>
         <th>Action</th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Address)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Phone)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsOverNight)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Website)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OpenTime)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Price)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Lat)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Lng)
-        </td>
-        <td>
-            <a href="@Url.Action("Edit", "Parking",new { id=item.ParkingID })" class="btn btn-primary btn-sm" style="width: 80px;">
-                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-                <span><strong>Sửa</strong></span> 
-            </a>
-            <a href="@Url.Action("Details", "Parking",new { id=item.ParkingID })" class="btn btn-success btn-sm" style="width: 80px;">
-                <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-                <span><strong>Xem</strong></span>
-            </a>
-            <a href="@Url.Action("Delete", "Parking",new { id=item.ParkingID })" class="btn btn-warning btn-sm" style="width: 80px;">
-                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-                <span><strong>Xóa</strong></span>
-            </a>
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsOverNight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Website)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OpenTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lng)
+            </td>
+            <td>
+                <a href="@Url.Action("Edit", "Parking",new { id=item.ParkingID })" class="btn btn-primary btn-sm" style="width: 80px;">
+                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                    <span><strong>Sửa</strong></span>
+                </a>
+                <a href="@Url.Action("Details", "Parking",new { id=item.ParkingID })" class="btn btn-success btn-sm" style="width: 80px;">
+                    <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                    <span><strong>Xem</strong></span>
+                </a>
+                <a href="@Url.Action("Delete", "Parking",new { id=item.ParkingID })" class="btn btn-warning btn-sm" style="width: 80px;">
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                    <span><strong>Xóa</strong></span>
+                </a>
+            </td>
+        </tr>
+    }
 
 </table>
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+

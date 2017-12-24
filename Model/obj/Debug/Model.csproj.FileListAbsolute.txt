@@ -25,6 +25,5 @@ C:\Users\vanhi\Desktop\HaNoiParking\Model\bin\Debug\EntityFramework.dll
 C:\Users\vanhi\Desktop\HaNoiParking\Model\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\vanhi\Desktop\HaNoiParking\Model\bin\Debug\EntityFramework.xml
 C:\Users\vanhi\Desktop\HaNoiParking\Model\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\vanhi\Desktop\HaNoiParking\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
 C:\Users\vanhi\Desktop\HaNoiParking\Model\obj\Debug\Model.dll
 C:\Users\vanhi\Desktop\HaNoiParking\Model\obj\Debug\Model.pdb
