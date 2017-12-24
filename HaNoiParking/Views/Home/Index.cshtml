@@ -1,0 +1,99 @@
+﻿@model HaNoiParking.Models.ExternalLoginListViewModel
+@using Microsoft.Owin.Security
+
+@{
+    ViewBag.Title = "QUẢN LÝ BÃI GỬI XE TRÊN ĐỊA BÀN HÀ NỘI";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCslWe4MsfrqI6J4LagbmuXE5H8gJG0d-4&libraries=places"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js">
+</script>
+<script src="~/Scripts/store-locator.min.js"></script>
+<script src="~/Scripts/infobubble-compiled.js"></script>
+<script src="~/Scripts/medicare-static-ds.js"></script>
+<script src="~/Scripts/custom.js"></script>
+<link href="~/Content/storelocator.css" rel="stylesheet" />
+<style>
+    body {
+        font-family: sans-serif;
+    }
+
+    #map-canvas, #panel {
+        height: 500px;
+    }
+
+    #panel {
+        width: 300px;
+        float: left;
+        margin-right: 10px;
+    }
+
+        #panel .feature-filter label {
+            width: 130px;
+        }
+
+    p.attribution, p.attribution a {
+        color: #666;
+    }
+
+    .store .hours {
+        color: grey;
+    }
+
+    .mcontent {
+        padding: 2px 0px;
+    }
+
+    .avatar-text {
+        line-height: 27px;
+        text-align: center;
+    }
+
+    .modal-body {
+        overflow: auto;
+    }
+</style>
+
+<div class="mcontent">
+    <div id="panel"></div>
+    <div id="map-canvas"></div>
+</div>
+
+
+<!-- Trigger the modal with a button -->
+<button onclick="getComment(1)">getComment(id_panking) => onclick="getComment(1)"</button>
+
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">BÌNH LUẬN</h4>
+            </div>
+            <div class="modal-body">
+                <div id="GetComment"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+
+<link href="~/Content/components.css" rel="stylesheet" />
+<link href="~/Content/todo.css" rel="stylesheet" />
+
+<script>
+    function getComment(id_panking) {
+        $.ajax({
+            url: '@Url.Action("GetComment", "Home")',
+            type: 'POST',
+            data: { id_panking: id_panking },
+            success: function (d) {
+                $('#GetComment').html(d);
+                $("#myModal").modal();
+            }
+        })
+    }
+</script>

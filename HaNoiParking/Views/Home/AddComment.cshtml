@@ -1,0 +1,43 @@
+﻿@model HaNoiParking.Models.Comment
+
+@Html.HiddenFor(q => q.UserID)
+@Html.HiddenFor(q => q.ParkingID)
+<div class="form-group">
+    <div class="col-md-12">
+        @if (Model.User == null)
+        {
+            <p>Vui lòng @Html.ActionLink("Đăng nhập", "Login", "Account") để bình luận</p>
+        }
+        else
+        {
+            <ul class="media-list">
+                <li class="media">
+                    <a class="pull-left avatar-text" href="javascript:;">
+                        <p class="todo-userpic" style="width: 27px; height: 27px">Y</p>
+                    </a>
+                    <div class="media-body">
+                        <textarea name="Content" id="Content" class="form-control todo-taskbody-taskdesc" rows="4" placeholder="Type comment..."></textarea>
+                    </div>
+                </li>
+            </ul>
+            <input class="pull-right btn btn-sm btn-circle green-haze" onclick="ActionAddComment();" name="name" value="Submit" />
+        }
+    </div>
+</div>
+
+<script>
+    function ActionAddComment() {
+        $.ajax({
+            url: '@Url.Action("ActionAddComment")',
+            type: 'POST',
+            data: {
+                UserID: $('#UserID').val(),
+                ParkingID: $('#ParkingID').val(),
+                Content: $('#Content').val()
+            },
+            success: function (d) {
+                $('#GetComment').html(d);
+            }
+        });
+    }
+</script>

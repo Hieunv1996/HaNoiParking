@@ -1,0 +1,41 @@
+﻿@model IEnumerable<HaNoiParking.Models.Comment>
+
+
+<div class="tab-pane active" id="tab_1">
+    <!-- TASK COMMENTS -->
+    <div class="form-group">
+        <div class="col-md-12">
+            @if (Model.Count() > 0)
+            {
+                <ul class="media-list">
+                    @foreach (var item in Model)
+                {
+                        <li class="media">
+                            <a class="pull-left avatar-text" href="javascript:;">
+                                <p class="todo-userpic" style="width: 27px; height: 27px">@item.User.Nickname.Trim().First().ToString().ToUpper()</p>
+                            </a>
+                            <div class="media-body todo-comment">
+                                <div>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                <p class="todo-comment-head">
+                                    <span class="todo-comment-username">@item.User.Email</span> &nbsp; <span class="todo-comment-date">@item.Time.ToString()</span>
+                                </p>
+                                <p class="todo-text-color">
+                                    @item.Content
+                                </p>
+                            </div>
+                        </li>
+                    }
+                </ul>
+            }else
+            {
+                <p>Hãy là người đầu tiên nhận xét!</p>
+            }
+        </div>
+    </div>
+    <!-- END TASK COMMENTS -->
+    <!-- TASK COMMENT FORM -->
+    @Html.Action("AddComment", new { id_panking = (int)ViewBag.id_panking })
+    <!-- END TASK COMMENT FORM -->
+</div>
