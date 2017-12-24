@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Model.EF.User>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section title{
+    Quản lí danh sách người dùng
+}
+
+<p>
+    <a href="@Url.Action("Create", "User")" class="btn btn-success">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        <span><strong>Thêm mới người dùng</strong></span>
+    </a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nickname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Avatar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th>Action</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nickname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Avatar)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>
+        <td>
+            <a href="@Url.Action("Edit", "User",new { id=item.UserID })" class="btn btn-primary btn-sm" style="width: 80px;">
+                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                <span><strong>Sửa</strong></span>
+            </a>
+            <a href="@Url.Action("Details", "User",new { id=item.UserID })" class="btn btn-success btn-sm" style="width: 80px;">
+                <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                <span><strong>Xem</strong></span>
+            </a>
+            <a href="@Url.Action("Delete", "User",new { id=item.UserID })" class="btn btn-warning btn-sm" style="width: 80px;">
+                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                <span><strong>Xóa</strong></span>
+            </a>
+        </td>
+    </tr>
+}
+
+</table>

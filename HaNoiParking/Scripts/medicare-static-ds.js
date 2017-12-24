@@ -27,9 +27,9 @@ function MedicareDataSource() {
  * @type {!storeLocator.FeatureSet}
  * @private
  */
-MedicareDataSource.prototype.FEATURES_ = new storeLocator.FeatureSet(
-    new storeLocator.Feature('IsOverNight-true', 'Is Overnight?')
-);
+//MedicareDataSource.prototype.FEATURES_ = new storeLocator.FeatureSet(
+//    //new storeLocator.Feature('IsOverNight-true', 'Is Overnight?')
+//);
 
 
 /**
@@ -119,7 +119,6 @@ MedicareDataSource.prototype.parseRow_ = function (row) {
     if (row.charAt(row.length - 2) == '"') {
         row = row.substring(0, row.length - 2);
     }
-
     row = row.split('","');
 
     return row;

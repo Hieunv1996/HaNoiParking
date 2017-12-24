@@ -18,3 +18,13 @@ D:\File\HaNoiPanking\HaNoiParking\Model\bin\Debug\EntityFramework.SqlServer.xml
 D:\File\HaNoiPanking\HaNoiParking\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
 D:\File\HaNoiPanking\HaNoiParking\Model\obj\Debug\Model.dll
 D:\File\HaNoiPanking\HaNoiParking\Model\obj\Debug\Model.pdb
+C:\Users\vanhi\Desktop\HaNoiParking\Model\bin\Debug\Model.dll.config
+C:\Users\vanhi\Desktop\HaNoiParking\Model\bin\Debug\Model.dll
+C:\Users\vanhi\Desktop\HaNoiParking\Model\bin\Debug\Model.pdb
+C:\Users\vanhi\Desktop\HaNoiParking\Model\bin\Debug\EntityFramework.dll
+C:\Users\vanhi\Desktop\HaNoiParking\Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\vanhi\Desktop\HaNoiParking\Model\bin\Debug\EntityFramework.xml
+C:\Users\vanhi\Desktop\HaNoiParking\Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\vanhi\Desktop\HaNoiParking\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+C:\Users\vanhi\Desktop\HaNoiParking\Model\obj\Debug\Model.dll
+C:\Users\vanhi\Desktop\HaNoiParking\Model\obj\Debug\Model.pdb

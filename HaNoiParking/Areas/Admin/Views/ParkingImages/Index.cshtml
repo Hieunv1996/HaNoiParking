@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Model.EF.ParkingImage>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section title{
+   Danh sách ảnh của bãi đỗ
+}
+
+<p>
+    <a href="@Url.Action("Create", "ParkingImage")" class="btn btn-success">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        <span><strong>Thêm mới ảnh</strong></span>
+    </a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ParkingID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImagePath)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ParkingID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ImagePath)
+        </td>
+        <td>
+            <a href="@Url.Action("Edit", "ParkingImage",new { id=item.ImageID })" class="btn btn-primary btn-sm" style="width: 80px;">
+                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                <span><strong>Sửa</strong></span>
+            </a>
+            <a href="@Url.Action("Details", "ParkingImage",new { id=item.ImageID })" class="btn btn-success btn-sm" style="width: 80px;">
+                <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                <span><strong>Xem</strong></span>
+            </a>
+            <a href="@Url.Action("Delete", "ParkingImage",new { id=item.ImageID })" class="btn btn-warning btn-sm" style="width: 80px;">
+                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                <span><strong>Xóa</strong></span>
+            </a>
+        </td>
+    </tr>
+}
+
+</table>
