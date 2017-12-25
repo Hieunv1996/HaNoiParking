@@ -526,6 +526,11 @@
     <Content Include="gentelella\vendors\nprogress\support\style.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Sites.css" />
+    <Content Include="Images\1.jpg" />
+    <Content Include="Images\avatar.jpg" />
+    <Content Include="Images\location.png" />
+    <Content Include="Images\parking %281%29.png" />
+    <Content Include="Images\parking.png" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -791,7 +796,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Base\" />
-    <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

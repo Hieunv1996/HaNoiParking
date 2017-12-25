@@ -13,7 +13,7 @@
             <ul class="media-list">
                 <li class="media">
                     <a class="pull-left avatar-text" href="javascript:;">
-                        <p class="todo-userpic" style="width: 27px; height: 27px">Y</p>
+                        <p class="todo-userpic" style="width: 27px; height: 27px">@Model.User.Nickname.Trim().First().ToString().ToUpper()</p>
                     </a>
                     <div class="media-body">
                         <textarea name="Content" id="Content" class="form-control todo-taskbody-taskdesc" rows="4" placeholder="Type comment..."></textarea>
